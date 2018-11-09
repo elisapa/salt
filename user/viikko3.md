@@ -6,7 +6,7 @@ Aloitin tehtävän tekemisen 09/11/2018 klo 12.05.
 Teen tehtävät USB-tikulta käynnistyvän Ubuntu 16.04.5 -käyttöjärjestelmällä.
 
 ### 1- Laita /srv/salt/ gittiin. Tee uusi moduli. Kloonaa varastosi toiselle koneelle (tai poista
-/srv/salt ja palauta se kloonaamalla) ja jatka sillä.
+### /srv/salt ja palauta se kloonaamalla) ja jatka sillä.
 
 
         sudo apt-get update
