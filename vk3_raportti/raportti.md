@@ -169,3 +169,6 @@ siirsin tämän raportin jotta repositorysta tulisi mahdollisimman selkeä.
 	sudo git commit
 	sudo git pull
 	sudo git push
+
+Tarkistin repoani ja kaikki tiedostot ovat tallennettu oikein. Päätin harjoituksen 10/11/2018 klo
+21.34.
