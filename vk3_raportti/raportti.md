@@ -123,5 +123,49 @@ ja samasta rivistä alkaen olen lisänyt 9 riviä. Nämä rivit näkyvät tulost
 Pieni kooste tulosteesta. Git blame -komennolla näkee kuka käyttäjä on viimeeksi muokannut
 tiedoston jokaista riviä sekä muokkauksen päivämäärän ja kellonajan. Komennolla ei näe mitä
 rivejä on poistettu tai muokattu.
+(https://git-scm.com/docs/git-blame)
 
 Päätän harjoituksen tekemisen 09/11/2018 klo 14.19
+--------------
+Jatkan harjoitusta 10/11/2018 klo 20.42. Ennen työskentelyä asensin tarvittavat ohjelmat ja kloonasin
+repon oikeaan kansioon.
+
+### Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset 
+### ‘git reset –hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
+
+Tein uuden kansion, jonne siirsin kaikki tiedostot /srv/salt/hello-kansiosta. Tämän jälkeen poistin 
+kansion.
+
+	cd /srv
+	mkdir eraseall
+	mv /srv/salt/hello /srv/eraseall
+	rm -r /srv/eraseall
+	sudo git add .
+	sudo git reset --hard
+	HEAD is now at 22f40bf Git log, diff ja blame selitykset lisätty tiedostoon viikko3.md
+
+Viimeisestä komennosta tulostui viimeisin commit-viesti, ja kansio /srv/salt/hello oli palautunut
+alkuperäiselle paikalleen.
+
+### Tee uusi salt-moduli. Voit asentaa ja konfiguroida minkä vain uuden ohjelman: demonin, työpöytäohjelman
+### tai komentokehotteesta toimivan ohjelman. Käytä tarvittaessa ‘find -printf “%T+ %p\n”|sort’
+### löytääksesi uudet asetustiedostot.
+
+Tein moduulin, joka asettaa näppäimistön kieleksi suomen, luo uuden käyttäjän, asentaa Apachen ja
+enabloi käyttäjähakemistot sekä tarkistaa toimiiko käyttäjän kotisivut modulin ajamisen jälkeen.
+
+	sudo mkdir apache
+	sudoedit init.sls
+	sudoedit default-index.html
+	sudoedit userdefault.html
+	sudo salt '*' state.apply apache 
+
+Koska moduuli toimii, sen voi committaa gittiin. Ennen commit-komentoa loin uuden kansion, jonne
+siirsin tämän raportin jotta repositorysta tulisi mahdollisimman selkeä.
+	
+	mkdir vk3_raportti
+	sudo mv /srv/salt/user/viikko3.md /srv/salt/vk3_raportti/raportti.md
+	sudo git add .
+	sudo git commit
+	sudo git pull
+	sudo git push
