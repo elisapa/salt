@@ -5,8 +5,6 @@ apachetester:
   user.present:
     - fullname: Apache Tester
     - shell: /bin/bash
-    - groups:
-      - sudo
 
 apache2:
   pkg.installed

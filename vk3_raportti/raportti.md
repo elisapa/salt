@@ -172,3 +172,5 @@ siirsin tämän raportin jotta repositorysta tulisi mahdollisimman selkeä.
 
 Tarkistin repoani ja kaikki tiedostot ovat tallennettu oikein. Päätin harjoituksen 10/11/2018 klo
 21.34.
+
+Edit 11/11/2018 klo 15.24, /apache/init.sls -tiedostosta poistettu kaksi riviä tarpeettomina.
